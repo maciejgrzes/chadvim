@@ -23,10 +23,25 @@ return {
     },
   },
 
-  { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
   { "numToStr/Comment.nvim", },
+
   {
     "mbbill/undotree",
     lazy = false,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    lazy = false,
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      return require "nvchad.configs.nvimtree"
+    end,
   },
 }
