@@ -2,7 +2,7 @@ require "nvchad.options"
 
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
-vim.opt.mouse = "a"
+vim.opt.mouse = "n"
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
