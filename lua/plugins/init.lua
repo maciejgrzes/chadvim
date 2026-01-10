@@ -15,6 +15,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc", "html", "css", "python", "java", "c", "cpp"
@@ -24,7 +25,7 @@ return {
 
   { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
   { "numToStr/Comment.nvim", },
-  { 
+  {
     "mbbill/undotree",
     lazy = false,
   },
