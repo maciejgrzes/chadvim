@@ -1,11 +1,9 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -24,8 +22,18 @@ return {
 
   { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
   { "numToStr/Comment.nvim", },
-  { 
+
+  {
     "mbbill/undotree",
     lazy = false,
   },
+
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+        vim.g.vimtex_view_method = "zathura"
+        vim.g.vimtex_compiler_method = "latexmk"
+    end,
+  }
 }
