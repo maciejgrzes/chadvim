@@ -13,6 +13,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc", "html", "css", "python", "java", "c", "cpp"
@@ -20,7 +21,12 @@ return {
     },
   },
 
-  { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000
+  },
+
   { "numToStr/Comment.nvim", },
 
   {
@@ -35,5 +41,14 @@ return {
         vim.g.vimtex_view_method = "zathura"
         vim.g.vimtex_compiler_method = "latexmk"
     end,
-  }
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    lazy = false,
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      return require "nvchad.configs.nvimtree"
+    end,
+  },
 }
