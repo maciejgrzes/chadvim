@@ -57,10 +57,12 @@ return {
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
+      "theHamsta/nvim-dap-virtual-text"
     },
     config = function()
       local dap = require("dap")
-      local dapui = require("dapui")
+      local dapui = require("dapui") 
+      require("nvim-dap-virtual-text").setup()
 
       dapui.setup()
 
