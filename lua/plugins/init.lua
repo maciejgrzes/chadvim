@@ -36,7 +36,6 @@ return {
 
   {
     "lervag/vimtex",
-    lazy = false,
     init = function()
         vim.g.vimtex_view_method = "zathura"
         vim.g.vimtex_compiler_method = "latexmk"
@@ -54,6 +53,7 @@ return {
 
   {
     "mfussenegger/nvim-dap",
+    lazy = false,
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
