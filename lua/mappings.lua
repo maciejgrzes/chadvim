@@ -1,10 +1,17 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
-local mc = require("multicursor-nvim")
-mc.setup()
-
 local allModes = { 'n', 'v', 's', 'o' }
+
+map("n", "<A-Left>",  "<C-w>h", { desc = "Window left" })
+map("n", "<A-Down>",  "<C-w>j", { desc = "Window down" })
+map("n", "<A-Up>",    "<C-w>k", { desc = "Window up" })
+map("n", "<A-Right>", "<C-w>l", { desc = "Window right" })
+
+map("i", "<A-Left>",  "<Esc><C-w>h", { desc = "Window left" })
+map("i", "<A-Down>",  "<Esc><C-w>j", { desc = "Window down" })
+map("i", "<A-Up>",    "<Esc><C-w>k", { desc = "Window up" })
+map("i", "<A-Right>", "<Esc><C-w>l", { desc = "Window right" })
 
 map(allModes, ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>t", ":split | terminal<CR>")
@@ -26,13 +33,3 @@ map("t", "<Esc>", [[<C-\><C-n>]])
 map("n", "<leader>u", ":UndotreeShow<CR>")
 
 vim.keymap.del({ "n", "i" }, "<C-s>")
-
-map({ "n", "x" }, "<C-Up>",   function() mc.lineAddCursor(-1) end, { desc = "Add cursor up" })
-map({ "n", "x" }, "<C-Down>", function() mc.lineAddCursor(1)  end, { desc = "Add cursor down" })
-map({ "n", "x" }, "<C-s>",    function() mc.matchAddCursor(1) end, { desc = "Add cursor on next match" })
-map({ "n", "x" }, "<C-x>",    mc.matchSkipCursor, { desc = "Skip next match" })
-
-map("n", "<esc>", function()
-  if not mc.cursorsEnabled() then mc.enableCursors()
-  else mc.clearCursors() end
-end)
